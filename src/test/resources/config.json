@@ -1,0 +1,14 @@
+{
+  "environment": {
+    "qa": {
+      "user_service": "https://reqres.in",
+      "order_service": "https://fakestoreapi.com",
+      "restful_api": "https://api.restful-api.dev"
+    },
+    "stg": {
+      "user_service": "https://staging-reqres.in",
+      "order_service": "https://staging-fakestoreapi.com",
+      "restful_api": "https://api.restful-api.stg"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="mySampleSuite"  parallel="classes">
+    <parameter name="env" value="qa"></parameter>
+    <listeners>
+        <listener class-name="com.syam.test.utils.report.MyTestLisiner"></listener>
+    </listeners>
+    <test name="this is regression" >
+
+        <classes>
+            <class name="com.syam.test.orders.MyOrdersTestClass"></class>
+            <class name="com.syam.test.users.MyUsersTestClass"></class>
+            <class name="com.syam.test.OrdersNUsers.OrdersNUsersTest"></class>
+            <class name="com.syam.test.restfill.RestFullServicesTest"></class>
+        </classes>
+    </test>
+
+    <test name="this is smpke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+    </test>
+</suite>
