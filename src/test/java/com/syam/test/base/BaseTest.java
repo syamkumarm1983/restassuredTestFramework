@@ -26,7 +26,7 @@ public class BaseTest {
         String path = getClass().getClassLoader().getResource("config.json").getPath();
         System.out.println(path);
 
-        JSONParser parser = new JSONParser();
+
         try{
             //FileReader read = new FileReader(path);
             ObjectMapper mapper = new ObjectMapper();

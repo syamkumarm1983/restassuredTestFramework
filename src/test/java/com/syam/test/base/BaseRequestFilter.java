@@ -27,7 +27,7 @@ public class BaseRequestFilter implements Filter {
         Response res = filterContext.next(requestFilterSpec,resPonseSpec);
         response.append("<details><summary>Response Info</summary><p>");
         response.append("<br/>Status Code: "+res.getStatusCode()+"\n");
-        response.append("<br/>Status Headers: "+res.getHeaders()+"\n");
+        //response.append("<br/>Status Headers: "+res.getHeaders()+"\n");
         response.append("<br/>Status Body: "+res.body().asString()+"\n");
 
 
