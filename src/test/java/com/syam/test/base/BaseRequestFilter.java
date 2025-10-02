@@ -17,13 +17,19 @@ public class BaseRequestFilter implements Filter {
     public Response filter(FilterableRequestSpecification requestFilterSpec, FilterableResponseSpecification resPonseSpec, FilterContext filterContext) {
         request.setLength(0);
         response.setLength(0);
-        request.append("URL: "+requestFilterSpec.getURI()+"\n");
-        request.append("Method: "+requestFilterSpec.getMethod()+"\n");
-        request.append("Request Headers: "+requestFilterSpec.getHeaders());
+        request.append("<details><summary>Request Info</summary><p>");
+        request.append("<br/>URL: "+requestFilterSpec.getURI()+"\n");
+        request.append("<br/>Method: "+requestFilterSpec.getMethod()+"\n");
+        request.append("<br/>Request Headers: "+requestFilterSpec.getHeaders());
+        if(requestFilterSpec.getBody()!=null)
+            request.append("<br/>Request Body: "+requestFilterSpec.getBody());
+        request.append("</p></details>");
         Response res = filterContext.next(requestFilterSpec,resPonseSpec);
-        response.append("Status Code: "+res.getStatusCode()+"\n");
-        response.append("Status Headers: "+res.getHeaders()+"\n");
-        response.append("Status Body: "+res.body().asString()+"\n");
+        response.append("<details><summary>Response Info</summary><p>");
+        response.append("<br/>Status Code: "+res.getStatusCode()+"\n");
+        response.append("<br/>Status Headers: "+res.getHeaders()+"\n");
+        response.append("<br/>Status Body: "+res.body().asString()+"\n");
+
 
         MyExtentReporter.extentTest.get().log(Status.INFO,"Request "+request.toString());
         MyExtentReporter.extentTest.get().log(Status.INFO,"Response "+response.toString());

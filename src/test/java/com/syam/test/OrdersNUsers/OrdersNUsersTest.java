@@ -9,11 +9,11 @@ public class OrdersNUsersTest extends BaseTest {
     @Test
     public void sampleBoth(){
         given().spec(getOrderServices()).get("/products/1");
-        given().spec(getUserServices()).get("/api/clerk/subscription-status");
+        given().spec(getUserServices()).get("/clerk/subscription-status");
     }
-    @Test
+    @Test(groups = "smoke")
     public void sample2() {
-        given().spec(getUserServices()).get("/api/clerk/payment-status");
+        given().spec(getUserServices()).get("/clerk/payment-status");
         given().spec(getOrderServices()).get("/products/10");
     }
 

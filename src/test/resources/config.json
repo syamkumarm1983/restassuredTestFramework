@@ -1,7 +1,7 @@
 {
   "environment": {
     "qa": {
-      "user_service": "https://reqres.in",
+      "user_service": "https://reqres.in/api",
       "order_service": "https://fakestoreapi.com",
       "restful_api": "https://api.restful-api.dev"
     },

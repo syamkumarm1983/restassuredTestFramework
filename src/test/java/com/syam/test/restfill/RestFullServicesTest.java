@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.requestSpecification;
 
 public class RestFullServicesTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"smoke","reg"})
     public void test1(){
         given().spec(getResfullServices()).get("/objects");
     }
@@ -18,7 +18,7 @@ public class RestFullServicesTest extends BaseTest {
         given().spec(getResfullServices()).get("/objects?id=3&id=5&id=10");
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void test3(){
         given().spec(getResfullServices()).get("/objects?id=7");
     }

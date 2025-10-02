@@ -6,20 +6,26 @@
     </listeners>
     <test name="this is regression" >
 
-        <classes>
-            <class name="com.syam.test.orders.MyOrdersTestClass"></class>
-            <class name="com.syam.test.users.MyUsersTestClass"></class>
-            <class name="com.syam.test.OrdersNUsers.OrdersNUsersTest"></class>
-            <class name="com.syam.test.restfill.RestFullServicesTest"></class>
-        </classes>
+<!--        <classes>-->
+<!--            <class name="com.syam.test.orders.MyOrdersTestClass"></class>-->
+<!--            <class name="com.syam.test.users.MyUsersTestClass"></class>-->
+<!--            <class name="com.syam.test.OrdersNUsers.OrdersNUsersTest"></class>-->
+<!--            <class name="com.syam.test.restfill.RestFullServicesTest"></class>-->
+<!--        </classes>-->
     </test>
-
-    <test name="this is smpke">
+    <!-- This will excute both  test in different order, ie it will execute aBOVE TEST this is regression and then execute this is smoke below also but in smoe we gave onlt groups-->
+    <test name="this is smoke">
         <groups>
             <run>
-                <include name="smoke"/>
+                <include name="sk"/>
             </run>
-        </groups>
 
+        </groups>
+                <classes>
+                    <class name="com.syam.test.orders.MyOrdersTestClass"></class>
+                    <class name="com.syam.test.users.MyUsersTestClass"></class>
+                    <class name="com.syam.test.OrdersNUsers.OrdersNUsersTest"></class>
+                    <class name="com.syam.test.restfill.RestFullServicesTest"></class>
+                </classes>
     </test>
 </suite>

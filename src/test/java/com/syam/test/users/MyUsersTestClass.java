@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 public class MyUsersTestClass extends BaseTest {
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "smoke")
     public void thisIsUserTestMethod() {
         given().spec(getUserServices()).when().get("/users");
     }
